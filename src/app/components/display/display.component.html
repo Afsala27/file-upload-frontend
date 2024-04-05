@@ -1,0 +1,33 @@
+<div class="parent">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let data of upload; let i = index;">
+        <div *ngIf="data !== null; else elseblock">
+          <div class="card mb-3" style="margin-right: 10px; margin-bottom: 10px;">
+            <div class="image" *ngIf="data.imageData !== null; else elseBlock">
+              <img [src]="getImageUrl(data.fileId)" class="card-img-top" alt="Image">
+            </div>
+            <ng-template #elseBlock>
+              <video [src]="getVideoUrl(data.fileId)" class="card-img-top video" controls></video>
+            </ng-template>
+            <div class="card-body">
+              <h5 class="card-title">{{data.caption}}</h5>
+              <p class="card-text">{{data.comment}}</p>
+              <div class="button">
+                <button class="btn btn-lg" (click)="deleteImageById(data.imageFileId)"><i class="bi bi-trash"></i></button>
+                <button class="btn btn-lg" (click)="addComment(data.imageFileId)"><i class="bi bi-pencil-square"></i></button>
+                <button *ngIf="data.imageData != null; else Block" class="btn btn-lg" (click)="downloadFile(data.fileId)"><i class="bi bi-download"></i></button>
+                <ng-template #Block>
+                  <button type="button" class="btn btn-lg" (click)="downloadVideoFile(data.fileId)"><i class="bi bi-download"></i></button>
+                </ng-template>
+                </div>
+              </div>
+            </div>
+        </div>
+        <ng-template #elseblock>
+          <h5 class="text-center">No upload is present. Try uploading image or video to display</h5>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

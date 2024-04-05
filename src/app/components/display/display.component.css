@@ -1,0 +1,31 @@
+
+/* .video, .image {
+    width: 100%;
+    height: 100%;
+    height: 100%; Set the height to 100% of the parent element
+  } */
+.card-img-top{
+    width: 100%;
+    height: 150px;
+}
+.container{
+    padding-top: 20px;
+}
+.parent{
+	margin: -125px;
+	padding: 156px;
+    height: 686px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.card-body{
+    background-color: #eee;
+}
+
+.button{
+    margin-left: -18px;
+}

@@ -1,0 +1,33 @@
+<div class="parent">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <div class="main">
+    <div class="image">
+      <form [formGroup]="frm" (ngSubmit)="onPost()">
+        <!-- <div class="card"> -->
+          <label for="chk" aria-hidden="true">Upload Image</label>
+        <!-- <div class="mb-3"> -->
+          <!-- <label for="caption" class="form-label">Caption*</label> -->
+          <input type="text" class="form-control" formControlName="caption" placeholder="Caption">
+          <div *ngIf="(f['caption'].touched || f['caption'].dirty) && f['caption'].invalid">
+            <div *ngIf="f['caption'].errors?.['required']" class="text-danger">Caption is required</div>
+          </div>
+        <!-- </div>
+        <div class="mb-3"> -->
+          <!-- <label for="comment" class="form-label">Comment</label> -->
+          <input type="text" class="form-control" formControlName="comment" placeholder="Summary">
+        <!-- </div>
+        <div class="mb-3"> -->
+          <!-- <label for="imgFile" class="form-label">Image File</label> -->
+          <input type="file" accept="image/*"  (change)="onChange($event)" class="form-control">
+        <!-- </div> -->
+        <!-- <div class="mb-3 form-check" *ngIf="status">
+          {{status.message}}
+        </div> -->
+        <button type="submit" [disabled]="frm.invalid">Submit</button>
+        <!-- </div> -->
+      </form>
+    </div>
+  </div>
+</div>

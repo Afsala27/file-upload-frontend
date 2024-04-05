@@ -1,0 +1,24 @@
+<div class="parent">
+    <head>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    </head>
+        <div class="main">
+            <input type="checkbox" id="chk" aria-hidden="true">
+                <div class="signup">
+                    <form [formGroup]="frm" (ngSubmit)="onRegister()">
+                        <label for="chk" aria-hidden="true">Sign up</label>
+                        <input type="text" name="name" class="form-control" formControlName="name" placeholder="Name" placeholder="Name" required="">
+                        <input type="email" name="email" placeholder="Email" class="form-control" formControlName="email" placeholder="Email" required="">
+                        <input type="password" name="password" placeholder="Password" class="form-control" formControlName="password" placeholder="Password" required="">
+                        <button>Sign up</button>
+                    </form>
+                </div>
+                <div class="login">
+                    <form [formGroup]="form" (ngSubmit)="onLogin()">
+                        <label for="chk" aria-hidden="true">Login</label>
+                        <input type="email" name="email" class="form-control" formControlName="email" placeholder="Email" required="">
+                        <input type="password" name="password" class="form-control" formControlName="password" placeholder="Password" required="">
+                        <button>Login</button>
+                    </form>
+                </div>
+</div>
